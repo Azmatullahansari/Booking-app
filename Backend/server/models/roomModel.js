@@ -12,11 +12,20 @@ const roomSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  /*
+  img: {
+    type: [String],
+  },*/
   roomsNumber: {
     type: [
       {
-        number: Number,
-        unavailableDates: [Date],
+        number: {
+          type: [Number],
+        },
+        unavailableDates: {
+          type: [Date],
+          default: [],
+        },
       },
     ],
     required: true,
