@@ -37,27 +37,29 @@ const Room = () => {
     }
   return (
     <div id="room">
-      <div className="container">{room ? (<div>
-        <div className="img-wrapper">
-              {/*<Carousel data={room.img} />*/}
+    <div className="container">{room ? (<div>
+      <div className="img-wrapper">
 
-              {/* <img src={room.img[0]} alt="" /> */}
+            {/*<Carousel data={room.img} />*/}
+
+            {/* <img src={room.img[0]} alt="" /> */}
+          </div>
+          <div className="text-wrapper">
+            <h1 className="heading center"> {room.name} </h1>
+            <p> {room.desc} </p>
+            <h2> ${room.price.toFixed(2)} </h2>
+          </div>
+          {user && user.isAdmin ? (
+            <div className="cta-wrapper">
+              <Link to={`/rooms/edit/${room._id}`}>Edit Room</Link>
+              <button onClick={handleDelete}>Delete Room</button>
             </div>
-            <div className="text-wrapper">
-              <h1 className="heading center"> {room.name} </h1>
-              <p> {room.desc} </p>
-              <h2> ${room.price.toFixed(2)} </h2>
-            </div>
-            {user && user.isAdmin ? (
-              <div className="cta-wrapper">
-                <Link to={`/edit/rooms/${room._id}`}>Edit Room</Link>
-                <button onClick={handleDelete}>Delete Room</button>
-              </div>
-            ): null}
-            </div>
-        ): null}
-        </div>
-    </div>
+          ): null}
+          </div>
+      ): null}
+      </div>
+  </div>
+
   );
 };
 

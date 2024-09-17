@@ -21,8 +21,8 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/rooms" element={<Rooms />} />
           <Route path="/rooms/create" element={<CreateRoom />} />
-          <Route path="/rooms/all/:id" element={<Room />} />
           <Route path="/rooms/edit/:id" element={<EditRoom />} />
+          <Route path="/rooms/all/:id" element={<Room />} />
         </Routes>
       </Router>
     </div>

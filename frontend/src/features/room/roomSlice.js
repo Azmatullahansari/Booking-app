@@ -53,7 +53,7 @@ export const updateRoom = createAsyncThunk(
   async (roomData, thunkApi) => {
     try {
       const { roomId, ...rest } = roomData;
-      const res = await fetch("http://localhost:5000/api/rooms/", {
+      const res = await fetch(`http://localhost:5000/api/rooms/${roomId}`, {
         headers: {
           "Content-Type": "application/json",
         },

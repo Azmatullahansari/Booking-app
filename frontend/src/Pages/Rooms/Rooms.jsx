@@ -5,7 +5,6 @@ import RoomList from "../../components/RoomList/RoomList"
 const Rooms = () => {
     const dispatch = useDispatch()
     const { rooms, isLoading,isSuccess } = useSelector(state => state.room)
-    console.log(rooms)
     useEffect(() => {
         dispatch(getRooms())
     },[])

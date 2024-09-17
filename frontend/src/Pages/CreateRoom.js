@@ -15,6 +15,7 @@ const CreateRoom = () => {
     description: "this is for testing",
     roomNumbers: "401, 203, 232, 234",
   });
+
   const { name, price, description, roomNumbers } = formData;
   useEffect(() => {
     if (!user) {
@@ -44,12 +45,16 @@ const CreateRoom = () => {
     if (!name || !price || !roomNumbers) {
       return;
     }
-    const roomArray = roomNumbers.split(",").map((item) => {
-      return {
-        number: parseInt(item),
-        unavailableDates: [],
-      };
-    });
+    const roomArray = roomNumbers
+      .split(",")
+      .map((item) => item.trim())
+      .filter((item) => item !== "")
+      .map((item) => {
+        return {
+          number: parseInt(item),
+          unavailableDates: [],
+        };
+      });
     /* let list = [];
     list = await Promise.all(
       Object.values(files).map(async (file) => {

@@ -9,7 +9,7 @@ const router = Router();
 //get all rooms
 router.get("/", getRooms);
 // create rooms
-router.post("/", createRoom);
+router.post("/", auth, createRoom);
 // get single room
 router.get("/:id", getRoom);
 // update room
