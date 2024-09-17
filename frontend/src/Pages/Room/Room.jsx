@@ -3,7 +3,7 @@ import { useEffect,useState } from "react"
 import { useNavigate, useParams, Link } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { reset, deleteRoom } from "../../features/room/roomSlice"
-//import { Carousel } from "../../components/Carousel/Carousel"
+import Carousel  from "../../components/Carousel/Carousel"
 
 
 const Room = () => {
@@ -45,8 +45,8 @@ const Room = () => {
     <div id="room">
     <div className="container">{room ? (<div>
       <div className="img-wrapper">
-
-            {<p>this for image</p>/*<Carousel data={room.img} />*/}
+            {<p>this for image</p>}
+            {<Carousel data={room.img} />}
 
             {/* <img src={room.img[0]} alt="" /> */}
           </div>
