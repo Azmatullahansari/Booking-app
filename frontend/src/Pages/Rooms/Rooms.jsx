@@ -12,7 +12,7 @@ const Rooms = () => {
       if (isSuccess) {
         dispatch(reset());
       }
-    }, [isSuccess]);
+    },[isSuccess]);
     if (isLoading) {
       return (
         <div>

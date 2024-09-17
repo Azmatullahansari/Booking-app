@@ -27,7 +27,8 @@ const CreateRoom = () => {
   useEffect(() => {
     if (isSuccess) {
       dispatch(reset());
-      navigate("/login");
+      //navigate to rooms
+      navigate("/rooms");
     }
   }, [isSuccess]);
   const handleChange = (e) => {

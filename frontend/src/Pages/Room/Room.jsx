@@ -1,3 +1,4 @@
+import "./room.style.scss"
 import { useEffect,useState } from "react"
 import { useNavigate, useParams, Link } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
@@ -14,8 +15,12 @@ const Room = () => {
     const [room, setRoom] = useState(null);
     useEffect(() => {
         if(isSuccess){
-            navigate(("/rooms"))
-            dispatch(reset())
+          //dispatch reset
+          dispatch(reset())            
+          //navigate to rooms
+          navigate(("/rooms"))
+        
+
         }
     },[isSuccess])
     useEffect(() => {
@@ -33,20 +38,21 @@ const Room = () => {
         getRoom()
     },[])
     const handleDelete = () => {
-       // dispatch(deleteRoom(id));
+      dispatch(deleteRoom(id));
+      navigate("/rooms")
     }
   return (
     <div id="room">
     <div className="container">{room ? (<div>
       <div className="img-wrapper">
 
-            {/*<Carousel data={room.img} />*/}
+            {<p>this for image</p>/*<Carousel data={room.img} />*/}
 
             {/* <img src={room.img[0]} alt="" /> */}
           </div>
           <div className="text-wrapper">
             <h1 className="heading center"> {room.name} </h1>
-            <p> {room.desc} </p>
+            <p> {room.description} </p>
             <h2> ${room.price.toFixed(2)} </h2>
           </div>
           {user && user.isAdmin ? (
