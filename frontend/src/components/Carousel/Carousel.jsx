@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import "./carousel.styles.scss";
-import { current } from "@reduxjs/toolkit";
+const Carousel = ({ data }) => {
 
-const Carousel = () => {
   return (
-    <div>
-    </div>
-  )
-}
+<div></div>
+  );
+};
 
-export default Carousel
+export default Carousel;
