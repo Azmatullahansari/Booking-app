@@ -1,4 +1,3 @@
-require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const { errorHandler } = require("./middleware/errorHandler");
@@ -9,7 +8,7 @@ const bookingRoutes = require("./routes/bookingRoutes");
 const userRoutes = require("./routes/userRoutes");
 const cookieParser = require("cookie-parser");
 const { auth } = require("./middleware/authMiddlleware");
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 //connect to database
 connectDB();
 // setup middleware

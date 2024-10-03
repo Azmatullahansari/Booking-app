@@ -10,7 +10,7 @@
     "nodemon": "^3.1.4"
   },
   "scripts": {
-    "server": "nodemon server/server.js"
+    "server": "nodemon --env-file=.env server.js"
   },
   "name": "booking-app",
   "version": "1.0.0",
